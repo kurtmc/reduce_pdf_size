@@ -14,27 +14,24 @@ do
 	case $key in
 		-res|--resolution)
 			res=$2
-			shift
-			;;
-		-bw|--blackandwhite)
-			BLACK_AND_WHITE=YES
 			shift # past argument
 			;;
 		-h|--help)
 			print_help
 			exit 0
-			shift # past argument
+			;;
+		-bw|--blackandwhite)
+			BLACK_AND_WHITE=YES
 			;;
 		*)
-			print_help
-			exit 1
 			# unknown option
 			;;
 	esac
 	shift # past argument or value
 done
 
-if [ "xx$BLACK_AND_WHITE" = "xxYES"]; then
+if [ "xx$BLACK_AND_WHITE" = "xxYES" ]; then
+	echo "Black and white"
 
 	gs  -q -dNOPAUSE -dBATCH -dSAFER \
 		-sDEVICE=pdfwrite \

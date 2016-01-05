@@ -7,7 +7,7 @@ Usage
 ========
 
 ```bash
-./reduce.sh myfile.pdf -res 72 -bw
+./reduce.sh -res 72 -bw myfile.pdf
 ```
 
 And this will convert your file to a compressed version called out.pdf
